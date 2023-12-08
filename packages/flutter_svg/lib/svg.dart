@@ -9,7 +9,12 @@ import 'src/loaders.dart';
 import 'src/utilities/file.dart';
 
 export 'package:vector_graphics/vector_graphics.dart'
-    show BytesLoader, vg, VectorGraphicUtilities, PictureInfo;
+    show
+        BytesLoader,
+        vg,
+        VectorGraphicUtilities,
+        PictureInfo,
+        VectorGraphicsErrorWidget;
 
 export 'src/cache.dart';
 export 'src/default_theme.dart';
@@ -81,6 +86,7 @@ class SvgPicture extends StatelessWidget {
     this.matchTextDirection = false,
     this.allowDrawingOutsideViewBox = false,
     this.placeholderBuilder,
+    this.errorBuilder,
     this.colorFilter,
     this.semanticsLabel,
     this.excludeFromSemantics = false,
@@ -180,6 +186,7 @@ class SvgPicture extends StatelessWidget {
     this.alignment = Alignment.center,
     this.allowDrawingOutsideViewBox = false,
     this.placeholderBuilder,
+    this.errorBuilder,
     this.semanticsLabel,
     this.excludeFromSemantics = false,
     this.clipBehavior = Clip.hardEdge,
@@ -240,6 +247,7 @@ class SvgPicture extends StatelessWidget {
     this.matchTextDirection = false,
     this.allowDrawingOutsideViewBox = false,
     this.placeholderBuilder,
+    this.errorBuilder,
     ui.ColorFilter? colorFilter,
     @deprecated ui.Color? color,
     @deprecated ui.BlendMode colorBlendMode = ui.BlendMode.srcIn,
@@ -292,6 +300,7 @@ class SvgPicture extends StatelessWidget {
     this.matchTextDirection = false,
     this.allowDrawingOutsideViewBox = false,
     this.placeholderBuilder,
+    this.errorBuilder,
     ui.ColorFilter? colorFilter,
     @deprecated ui.Color? color,
     @deprecated ui.BlendMode colorBlendMode = ui.BlendMode.srcIn,
@@ -341,6 +350,7 @@ class SvgPicture extends StatelessWidget {
     this.matchTextDirection = false,
     this.allowDrawingOutsideViewBox = false,
     this.placeholderBuilder,
+    this.errorBuilder,
     ui.ColorFilter? colorFilter,
     @deprecated ui.Color? color,
     @deprecated ui.BlendMode colorBlendMode = ui.BlendMode.srcIn,
@@ -390,6 +400,7 @@ class SvgPicture extends StatelessWidget {
     this.matchTextDirection = false,
     this.allowDrawingOutsideViewBox = false,
     this.placeholderBuilder,
+    this.errorBuilder,
     ui.ColorFilter? colorFilter,
     @deprecated ui.Color? color,
     @deprecated ui.BlendMode colorBlendMode = ui.BlendMode.srcIn,
@@ -453,6 +464,9 @@ class SvgPicture extends StatelessWidget {
   /// The placeholder to use while fetching, decoding, and parsing the SVG data.
   final WidgetBuilder? placeholderBuilder;
 
+  /// The widget to use if an error occurs while fetching, decoding, and parsing the SVG data.
+  final VectorGraphicsErrorWidget? errorBuilder;
+
   /// If true, will horizontally flip the picture in [TextDirection.rtl] contexts.
   final bool matchTextDirection;
 
@@ -496,6 +510,7 @@ class SvgPicture extends StatelessWidget {
       clipBehavior: clipBehavior,
       colorFilter: colorFilter,
       placeholderBuilder: placeholderBuilder,
+      errorBuilder: errorBuilder,
       clipViewbox: !allowDrawingOutsideViewBox,
       matchTextDirection: matchTextDirection,
     );
