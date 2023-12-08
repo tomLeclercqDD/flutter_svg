@@ -20,6 +20,14 @@ dependency_overrides:
     git:
       url: https://github.com/tomLeclercqDD/vector_graphics
       path: packages/vector_graphics  
+  vector_graphics_codec:
+    git:
+      url: https://github.com/tomLeclercqDD/vector_graphics
+      path: packages/vector_graphics_codec  
+  vector_graphics_compiler:
+    git:
+      url: https://github.com/tomLeclercqDD/vector_graphics
+      path: packages/vector_graphics_compiler  
 
 environment:
   sdk: '>=2.19.0-0 <4.0.0'
