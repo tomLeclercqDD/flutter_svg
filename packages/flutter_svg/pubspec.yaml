@@ -15,28 +15,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-dependency_overrides:
-  vector_graphics:
-    git:
-      url: https://github.com/tomLeclercqDD/vector_graphics
-      path: packages/vector_graphics  
-  vector_graphics_codec:
-    git:
-      url: https://github.com/tomLeclercqDD/vector_graphics
-      path: packages/vector_graphics_codec  
-  vector_graphics_compiler:
-    git:
-      url: https://github.com/tomLeclercqDD/vector_graphics
-      path: packages/vector_graphics_compiler  
-
 environment:
   sdk: '>=2.19.0-0 <4.0.0'
   flutter: ">=3.7.0-0"
 
 # dependency_overrides:
 #   vector_graphics:
-#     path: ../vector_graphics/packages/vector_graphics
+#     path: ../../../vector_graphics/packages/vector_graphics
 #   vector_graphics_codec:
-#     path: ../vector_graphics/packages/vector_graphics_codec
+#     path: ../../../vector_graphics/packages/vector_graphics_codec
 #   vector_graphics_compiler:
-#     path: ../vector_graphics/packages/vector_graphics_compiler
+#     path: ../../../vector_graphics/packages/vector_graphics_compiler
